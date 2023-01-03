@@ -8,7 +8,7 @@ const connect = mysql.createConnection({
   database: process.env.DB_DATABASE,
   connectionLimit: process.env.DB_CONNECTION_LIMIT,
   host: process.env.DB_HOST,
-  ssl: require,
+  // ssl: require,
   //port: process.env.APP_PORT,
 });
 

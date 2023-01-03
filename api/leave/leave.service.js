@@ -30,6 +30,7 @@ module.exports = {
         console.log(error);
         return callback(error);
       }
+      console.log("result", results);
       return callback(null, results);
     });
   },
