@@ -21,7 +21,7 @@ module.exports = {
       console.log(result[0].email);
       // Set the API key
       sgMail.setApiKey(
-        "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"
+        "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"
       );
 
       // Set the email parameters
@@ -32,7 +32,7 @@ module.exports = {
       // Send the email
       try {
         sgMail.send({
-          to: "swati@sstus.net",
+          to: "pooja@sstus.net",
           cc: recipient,
           from: "rupalikongari5@gmail.com",
           subject: subject,
