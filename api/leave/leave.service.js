@@ -45,17 +45,16 @@ module.exports = {
     });
   },
   updateLeave: (data, callback) => {
-    const sql = `update leaves_db.leave set emp_id=?,sick_leave=?, paid_leave=?, unpaid_leave=?, casual_leave=?, maternity_leave=? where id=?`;
+    const sql = `update leaves_db.leave set sick_leave=?, paid_leave=?, unpaid_leave=?, casual_leave=?, maternity_leave=? where emp_id=?`;
     pool.query(
       sql,
       [
-        data.emp_id,
         data.sick_leave,
         data.paid_leave,
         data.unpaid_leave,
         data.casual_leave,
         data.maternity_leave,
-        data.id,
+        data.emp_id,
       ],
       (error, results, fields) => {
         if (error) {
