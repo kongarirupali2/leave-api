@@ -26,27 +26,27 @@ module.exports = {
 
       sendGridHelper.sendMail(result[0].email);
       // Set the API key
-      // sgMail.setApiKey(
-      //   "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"
-      // );
+      sgMail.setApiKey(
+        "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"
+      );
 
-      // // Set the email parameters
-      // const recipient = result[0].email;
-      // const subject = "Leave Application";
-      // const body = `Hello, ${result[0].email} is asking for leave`;
-      // console.log(recipient);
-      // // Send the email
-      // try {
-      //   sgMail.send({
-      //     to: "anokh@sstus.net",
-      //     cc: recipient,
-      //     from: "deepika@sstus.net",
-      //     subject: subject,
-      //     text: body,
-      //   });
-      // } catch (err) {
-      //   console.log(err);
-      // }
+      // Set the email parameters
+      const recipient = result[0].email;
+      const subject = "Leave Application";
+      const body = `Hello, ${result[0].email} is asking for leave`;
+      console.log(recipient);
+      // Send the email
+      try {
+        sgMail.send({
+          to: "pooja@sstus.net",
+          cc: recipient,
+          from: "rupalikongari5@gmail.com",
+          subject: subject,
+          text: body,
+        });
+      } catch (err) {
+        console.log(err);
+      }
       return res.status(200).json({
         success: 1,
         data: result,
