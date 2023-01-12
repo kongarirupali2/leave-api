@@ -1,6 +1,7 @@
 const sgMail = require("@sendgrid/mail");
 const nodemailer = require("nodemailer");
 const { param } = require("../../app");
+const sendGridHelper = require("./../utilities/sendGridHelper");
 const {
   getEmployee_Email,
   getEmployee_Email_all,
@@ -19,28 +20,33 @@ module.exports = {
         });
       }
       console.log(result[0].email);
-      // Set the API key
-      sgMail.setApiKey(
-        "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"
-      );
+      // var mailBody = "Hello form Amelia";
 
-      // Set the email parameters
-      const recipient = result[0].email;
-      const subject = "Leave Application";
-      const body = `Hello, ${result[0].email} is asking for leave`;
-      console.log(recipient);
-      // Send the email
-      try {
-        sgMail.send({
-          to: "swati@sstus.net",
-          cc: recipient,
-          from: "rupalikongari5@gmail.com",
-          subject: subject,
-          text: body,
-        });
-      } catch (err) {
-        console.log(err);
-      }
+      // var mailSub = "Test mail";
+
+      sendGridHelper.sendMail(result[0].email);
+      // Set the API key
+      // sgMail.setApiKey(
+      //   "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"
+      // );
+
+      // // Set the email parameters
+      // const recipient = result[0].email;
+      // const subject = "Leave Application";
+      // const body = `Hello, ${result[0].email} is asking for leave`;
+      // console.log(recipient);
+      // // Send the email
+      // try {
+      //   sgMail.send({
+      //     to: "anokh@sstus.net",
+      //     cc: recipient,
+      //     from: "deepika@sstus.net",
+      //     subject: subject,
+      //     text: body,
+      //   });
+      // } catch (err) {
+      //   console.log(err);
+      // }
       return res.status(200).json({
         success: 1,
         data: result,

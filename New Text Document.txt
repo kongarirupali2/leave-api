@@ -1,0 +1,5 @@
+var mailBody = '<html>\r\n<body>\r\n<p>Dear ' + userName + ', Kindly register you Practice on <a href="' + HTTP_PROTOCOL + MAIN_SITE + '/doctor/signup" target=""_blank>' + HTTP_PROTOCOL + MAIN_SITE + '/signup<\/a>.<\/p>\r\n\r\n<\/body>\r\n<\/html>';
+
+                var mailSub = 'Patient requested you to register your Practice.';
+
+                apiEmailHelper.sendMail(mailSub, mailBody, userEmail);
